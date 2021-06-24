@@ -14,6 +14,7 @@ from sklearn.metrics import mean_squared_error
 from datetime import datetime, timedelta
 import openpyxl
 
+st.set_page_config(layout='wide)
 # hide 'made with streamlit'
 st.markdown("""<style>footer{visibility:hidden;}</style>""",unsafe_allow_html=True)
 # Define a function to load data for faster computation
