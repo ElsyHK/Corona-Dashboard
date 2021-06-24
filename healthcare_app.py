@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.arima_model import ARIMA
 from sklearn.metrics import mean_squared_error
 from datetime import datetime, timedelta
+import openpyxl
 
 # hide 'made with streamlit'
 st.markdown("""<style>footer{visibility:hidden;}</style>""",unsafe_allow_html=True)
