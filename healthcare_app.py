@@ -27,6 +27,11 @@ def load_data1(path):
     df = pd.read_csv(path, encoding='utf-8')
     return df
 
+@st.cache(allow_output_mutation=True)
+def arima(history):
+    model = ARIMA(history, order=(0,1,4))
+    return model
+
 def place_value(number):
     return ("{:,}".format(number))
 
@@ -436,7 +441,8 @@ if add_selectbox == 'Vaccinations & Predictions':
 
     ## walk-forward validation
     for t in range(len(test)):
-        model = ARIMA(history, order=(0,1,4))
+        #model = ARIMA(history, order=(0,1,4))
+        model =arima(history)
         model_fit = model.fit()
         output = model_fit.forecast()
         yhat = output[0]
